@@ -1,7 +1,7 @@
 package com.chain.cold.common.admin.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.itheima.cold.common.admin.entity.HostEntity;
+import com.chain.cold.common.admin.entity.HostEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

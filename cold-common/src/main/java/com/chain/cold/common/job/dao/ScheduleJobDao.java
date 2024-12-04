@@ -1,7 +1,7 @@
 package com.chain.cold.common.job.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.itheima.cold.common.job.entity.ScheduleJobEntity;
+import com.chain.cold.common.job.entity.ScheduleJobEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.Map;

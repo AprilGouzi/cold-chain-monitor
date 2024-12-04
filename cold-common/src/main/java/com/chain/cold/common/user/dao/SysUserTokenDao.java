@@ -1,7 +1,7 @@
 package com.chain.cold.common.user.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.itheima.cold.common.user.entity.SysUserTokenEntity;
+import com.chain.cold.common.user.entity.SysUserTokenEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
