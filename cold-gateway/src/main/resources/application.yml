@@ -1,0 +1,48 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8080
+  connection-timeout: 50000ms
+  servlet:
+    context-path: /cold
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-8001:8001/eureka
+
+spring:
+  application:
+    name: cold-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: cold-user-router # 路由唯一 id
+        uri: lb://cold-user # 指向注册中心的 服务
+        predicates: # 断言
+          - Path=/cold/sys/user/** # path地址，以/cold/admin/ 开头的会被转发到cold-admin服务 /*一级匹配 /**多级匹配
+
+      - id: cold-admin-router
+        uri: lb://cold-admin
+        predicates:
+          - Path=/cold/admin/**
+
+      - id: cold-monitor-router
+        uri: lb://cold-monitor
+        predicates:
+          - Path=/cold/device/monitor/**
+
+      - id: cold-jobs-router
+        uri: lb://cold-jobs
+        predicates:
+          - Path=/cold/system/schedule/**
+
+      - id: cold-druid-router
+        uri: lb://cold-druid # lb 负载均衡
+        predicates:
+          - Path=/cold/apache-druid/query/**
