@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chain.cold.common.user.dao.SysUserTokenDao">
+
+    <select id="queryByToken" resultType="com.chain.cold.common.user.entity.SysUserTokenEntity">
+        SELECT *
+        FROM sys_user_token
+        WHERE token = #{value}
+    </select>
+
+    <delete id="deleteByToken">
+        DELETE
+        FROM sys_user_token
+        WHERE token = #{value}
+    </delete>
+</mapper>
