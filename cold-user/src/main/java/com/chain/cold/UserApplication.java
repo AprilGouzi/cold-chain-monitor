@@ -1,4 +1,4 @@
-package com.chain.cold.user;
+package com.chain.cold;
 
 
 import org.springframework.boot.SpringApplication;

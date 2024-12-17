@@ -19,4 +19,10 @@ public interface SysUserTokenService extends IService<SysUserTokenEntity> {
      * @return
      */
     Result createToken(Long userId);
+
+    /**
+     * 退出登录，删除token记录
+     * @param token
+     */
+    void logout(String token);
 }
