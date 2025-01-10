@@ -32,7 +32,7 @@ public class AdminController {
         return Result.ok(map);
     }
 
-    @RequestMapping("/operationLog")
+    @RequestMapping("/operationlog")
     public Result getOperationLog(@RequestParam Map<String,Object> params){
         List<OperationLog> list = new ArrayList<OperationLog>();
 
